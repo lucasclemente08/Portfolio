@@ -30,9 +30,10 @@ export const About = () => {
     </article>
  
    </div>
+   <small>Estudiante de Sistemas y desarrollador Front-end developer autodidacta.</small>
    <p>
-    lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident corporis tempore odit doloremque, placeat, dolorem eum id cumque magnam architecto blanditiis sed facere aperiam iste, autem quam sequi possimus voluptatem. lordolor sit lorem ipsum lorem ipsum lorem ipsum
-   </p>
+   I am a Front-end Developer jr, self-taught and currently a student of Sistemas de Análisis de la Información, looking for a job where I can use my skills and knowledge to develop web applications. I am always trying to improve my skills and learn new technologies. I consider myself a proactive person and determined to achieve my goals.
+</p>
    <a href="#contact" className="btn btn-primary">Let's talk</a>
     </div>
   </div>
