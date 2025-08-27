@@ -7,34 +7,38 @@ import {VscFolderLibrary} from 'react-icons/vsc'
 export const About = () => {
   return (
   <section id="about"> 
-  <h5>Get to Know</h5>
-  <h2>About me</h2>
+<h5>Conóceme</h5>
+<h2>Sobre mí</h2>
 
-  <div className="container about__container">
-    <div className="about__me">
-     <div className="about__me-image">
-      <img src={ME} alt="about image" />
-     </div>
+<div className="container about__container">
+  <div className="about__me">
+    <div className="about__me-image">
+      <img src={ME} alt="imagen sobre mí" />
     </div>
-    <div className="about__content">
-   <div className="about__cards">
-    <article className='about__card'>
-      <FaAward className="about__icon"/>
-    <h5>Experience</h5>
-    <small> 1 year of Work </small>
-    </article>
-    <article className='about__card'>
-      <VscFolderLibrary className="about__icon"/>
-    <h5>Projects</h5>
-    <small> +10 Completed </small>
-    </article>
+  </div>
+
+  <div className="about__content">
+    <div className="about__cards">
+      <article className='about__card'>
+        <FaAward className="about__icon" />
+        <h5>Experiencia</h5>
+        <small>1 año de trabajo</small>
+      </article>
+
+      <article className='about__card'>
+        <VscFolderLibrary className="about__icon" />
+        <h5>Proyectos</h5>
+        <small>+10 completados</small>
+      </article>
+
+
+ 
+  
  
    </div>
-   <small>Estudiante de Sistemas y desarrollador Front-end developer autodidacta.</small>
-   <p>
-   I am a Front-end Developer jr, self-taught and currently a student of Sistemas de Análisis de la Información, looking for a job where I can use my skills and knowledge to develop web applications. I am always trying to improve my skills and learn new technologies. I consider myself a proactive person and determined to achieve my goals.
-</p>
-   <a href="#contact" className="btn btn-primary">Let's talk</a>
+   <small>Analista de sistema Sistemas y desarrollador</small>
+<p> Desarrollador web especializado en crear aplicaciones modernas y eficientes. Proactivo, orientado a resultados y siempre enfocado en entregar soluciones que generen valor. Apasionado por aprender y aplicar nuevas tecnologías para optimizar proyectos y mejorar la experiencia del usuario. </p>
+   <a href="#contact" className="btn btn-primary">Hablemos!</a>
     </div>
   </div>
   </section>
