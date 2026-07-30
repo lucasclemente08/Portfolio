@@ -19,6 +19,7 @@
 - [Scripts Disponibles](#-scripts-disponibles)
 - [Deploy](#-deploy)
 - [Contacto](#-contacto)
+- [Licencia](#-licencia)
 
 ---
 
