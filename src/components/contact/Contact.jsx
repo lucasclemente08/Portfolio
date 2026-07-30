@@ -5,7 +5,6 @@ import { FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
-  // Variantes de animación para los artículos
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
@@ -34,7 +33,7 @@ const Contact = () => {
 
           {/* LinkedIn */}
           <motion.article
-            className="flex flex-row contact__option"
+            className="contact__option"
             variants={cardVariants}
             initial="hidden"
             animate="visible"
@@ -57,7 +56,7 @@ const Contact = () => {
 
           {/* GitHub */}
           <motion.article
-            className="flex flex-row contact__option"
+            className="contact__option"
             variants={cardVariants}
             initial="hidden"
             animate="visible"
@@ -66,12 +65,12 @@ const Contact = () => {
             <FaGithub className="contact__option-icon" aria-hidden="true" />
             <div>
               <h4>GitHub</h4>
-              <h5>lucasclemente2016</h5>
+              <h5>lucasclemente08</h5>
               <a
                 href="https://github.com/lucasclemente08"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Visitar GitHub de lucasclemente2016"
+                aria-label="Visitar GitHub de lucasclemente08"
               >
                 Ver repositorios
               </a>

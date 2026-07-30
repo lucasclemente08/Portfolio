@@ -2,24 +2,36 @@
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
+
 .service__card {
-  background: #1f1f1f;
+  background: var(--color-bg-variant);
   padding: 1.5rem;
   border-radius: 1rem;
   text-align: center;
   flex: 1 1 250px;
+  max-width: 350px;
+  border: 1px solid transparent;
+  transition: var(--transition);
 }
+
+.service__card:hover {
+  background: transparent;
+  border-color: var(--color-primary-variant);
+}
+
 .service__icon {
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: var(--color-primary);
 }
-.btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
 
-  color: white;
-  border-radius: 0.5rem;
-  text-decoration: none;
+.service__card h3 {
+  margin-bottom: 0.8rem;
+}
+
+.service__card p {
+  color: var(--color-light);
+  margin-bottom: 1rem;
 }
