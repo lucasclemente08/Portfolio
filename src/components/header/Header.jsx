@@ -3,18 +3,23 @@ import './header.css';
 import CTA from './CTA';
 import ME from '../../assets/me.png';
 import HeaderSocials from './HeaderSocials';
+import LanguageToggle from './LanguageToggle';
 import { motion } from 'framer-motion';
+import { useLang } from '../../i18n/LanguageContext';
 
 const Header = () => {
+  const { t } = useLang();
+
   return (
     <header>
+      <LanguageToggle />
       <div className="container header__container">
         <motion.h5
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Hola soy
+          {t.header.greeting}
         </motion.h5>
 
         <motion.h1
@@ -31,7 +36,7 @@ const Header = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
         >
-          FrontEnd Developer
+          {t.header.role}
         </motion.h5>
 
         <CTA />
@@ -43,7 +48,7 @@ const Header = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
         >
-          <img src={ME} alt="me" />
+          <img src={ME} alt="Lucas Clemente" />
         </motion.div>
 
         <motion.a
@@ -53,7 +58,7 @@ const Header = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
         >
-          Scroll Down
+          {t.header.scrollDown}
         </motion.a>
       </div>
     </header>

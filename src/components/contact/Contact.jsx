@@ -3,8 +3,11 @@ import './contact.css';
 import { BsLinkedin } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { useLang } from '../../i18n/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLang();
+
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
@@ -17,7 +20,7 @@ const Contact = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Ponte en Contacto
+        {t.contact.subtitle}
       </motion.h5>
 
       <motion.h2
@@ -25,7 +28,7 @@ const Contact = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        Contáctame
+        {t.contact.title}
       </motion.h2>
 
       <div className="container contact__container">
@@ -41,15 +44,15 @@ const Contact = () => {
           >
             <BsLinkedin className="contact__option-icon" aria-hidden="true" />
             <div>
-              <h4>LinkedIn</h4>
-              <h5>Lucas Clemente</h5>
+              <h4>{t.contact.linkedin}</h4>
+              <h5>{t.contact.linkedinName}</h5>
               <a
                 href="https://www.linkedin.com/in/lucas-clemente-front-end-developer/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Visitar perfil de LinkedIn de Lucas Clemente"
+                aria-label="LinkedIn"
               >
-                Visitar perfil
+                {t.contact.visitProfile}
               </a>
             </div>
           </motion.article>
@@ -64,15 +67,15 @@ const Contact = () => {
           >
             <FaGithub className="contact__option-icon" aria-hidden="true" />
             <div>
-              <h4>GitHub</h4>
+              <h4>{t.contact.github}</h4>
               <h5>lucasclemente08</h5>
               <a
                 href="https://github.com/lucasclemente08"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Visitar GitHub de lucasclemente08"
+                aria-label="GitHub"
               >
-                Ver repositorios
+                {t.contact.viewRepos}
               </a>
             </div>
           </motion.article>
