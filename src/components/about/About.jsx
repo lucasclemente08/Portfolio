@@ -1,46 +1,45 @@
 import React from 'react'
 import './about.css'
 import ME from '../../assets/me-about.png'
-import {FaAward} from 'react-icons/fa'
-import {VscFolderLibrary} from 'react-icons/vsc'
+import { FaAward } from 'react-icons/fa'
+import { VscFolderLibrary } from 'react-icons/vsc'
+import { useLang } from '../../i18n/LanguageContext'
 
 export const About = () => {
+  const { t } = useLang()
+
   return (
-  <section id="about"> 
-<h5>Conóceme</h5>
-<h2>Sobre mí</h2>
+    <section id="about">
+      <h5>{t.about.subtitle}</h5>
+      <h2>{t.about.title}</h2>
 
-<div className="container about__container">
-  <div className="about__me">
-    <div className="about__me-image">
-      <img src={ME} alt="imagen sobre mí" />
-    </div>
-  </div>
+      <div className="container about__container">
+        <div className="about__me">
+          <div className="about__me-image">
+            <img src={ME} alt={t.about.title} />
+          </div>
+        </div>
 
-  <div className="about__content">
-    <div className="about__cards">
-      <article className='about__card'>
-        <FaAward className="about__icon" />
-        <h5>Experiencia</h5>
-        <small>1 año de trabajo</small>
-      </article>
+        <div className="about__content">
+          <div className="about__cards">
+            <article className='about__card'>
+              <FaAward className="about__icon" />
+              <h5>{t.about.experience}</h5>
+              <small>{t.about.experienceText}</small>
+            </article>
 
-      <article className='about__card'>
-        <VscFolderLibrary className="about__icon" />
-        <h5>Proyectos</h5>
-        <small>+10 completados</small>
-      </article>
+            <article className='about__card'>
+              <VscFolderLibrary className="about__icon" />
+              <h5>{t.about.projects}</h5>
+              <small>{t.about.projectsText}</small>
+            </article>
+          </div>
 
-
- 
-  
- 
-   </div>
-   <small>Analista de sistema Sistemas y desarrollador</small>
-<p> Desarrollador web especializado en crear aplicaciones modernas y eficientes. Proactivo, orientado a resultados y siempre enfocado en entregar soluciones que generen valor. Apasionado por aprender y aplicar nuevas tecnologías para optimizar proyectos y mejorar la experiencia del usuario. </p>
-   <a href="#contact" className="btn btn-primary">Hablemos!</a>
-    </div>
-  </div>
-  </section>
+          <small>{t.about.role}</small>
+          <p>{t.about.description}</p>
+          <a href="#contact" className="btn btn-primary">{t.about.letsTalk}</a>
+        </div>
+      </div>
+    </section>
   )
 }

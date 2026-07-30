@@ -1,17 +1,17 @@
 import React from 'react';
 import CV from '../../assets/CV.pdf';
+import { useLang } from '../../i18n/LanguageContext';
 
 export const CTA = () => {
+  const { t } = useLang();
+
   return (
     <div className="cta">
-      {/* Botón para descargar CV */}
       <a href={CV} className="btn" download>
-        Descargar CV
+        {t.header.downloadCV}
       </a>
-
-      {/* Botón para ir a la sección de contacto */}
       <a href="#contact" className="btn btn-primary">
-        Hablemos!
+        {t.header.letsTalk}
       </a>
     </div>
   );

@@ -1,32 +1,23 @@
 import React from 'react'
 import './testimonials.css'
 import { motion } from 'framer-motion'
-
-const testimonialsData = [
-  {
-    id: 1,
-    name: 'Cliente Fiverr',
-    role: 'Fiverr Buyer',
-    quote: 'Excelente trabajo, muy profesional y entregado a tiempo. Lo recomiendo totalmente.',
-    rating: 5
-  },
-  {
-    id: 2,
-    name: 'Colaborador',
-    role: 'Full Stack Developer',
-    quote: 'Lucas es un gran desarrollador frontend, siempre dispuesto a ayudar y con mucha iniciativa.',
-    rating: 5
-  }
-]
+import { useLang } from '../../i18n/LanguageContext'
 
 const Testimonials = () => {
+  const { t } = useLang()
+
+  const testimonials = [
+    { id: 1, name: t.testimonials.client1, role: t.testimonials.client1Role, quote: t.testimonials.client1Quote, rating: 5 },
+    { id: 2, name: t.testimonials.client2, role: t.testimonials.client2Role, quote: t.testimonials.client2Quote, rating: 5 }
+  ]
+
   return (
     <section id="testimonials">
-      <h5>Lo que dicen de mí</h5>
-      <h2>Testimonios</h2>
+      <h5>{t.testimonials.subtitle}</h5>
+      <h2>{t.testimonials.title}</h2>
 
       <div className="container testimonials__container">
-        {testimonialsData.map(({ id, name, role, quote, rating }, index) => (
+        {testimonials.map(({ id, name, role, quote, rating }, index) => (
           <motion.article
             key={id}
             className="testimonial__card"
