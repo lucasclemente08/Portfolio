@@ -7,23 +7,23 @@ const Experiences = () => {
   const { t } = useLang()
 
   const frontend = [
-    { name: 'HTML', level: t.experience.advanced },
-    { name: 'CSS', level: t.experience.advanced },
-    { name: 'JavaScript', level: t.experience.advanced },
-    { name: 'Tailwind', level: t.experience.advanced },
-    { name: 'React JS', level: t.experience.advanced },
-    { name: 'Git y GitHub', level: t.experience.advanced }
+    { name: 'HTML', level: t.experience.advanced, levelKey: 'advanced' },
+    { name: 'CSS', level: t.experience.advanced, levelKey: 'advanced' },
+    { name: 'JavaScript', level: t.experience.advanced, levelKey: 'advanced' },
+    { name: 'Tailwind', level: t.experience.advanced, levelKey: 'advanced' },
+    { name: 'React JS', level: t.experience.advanced, levelKey: 'advanced' },
+    { name: 'Git y GitHub', level: t.experience.advanced, levelKey: 'advanced' }
   ]
 
   const backend = [
-    { name: '.NET', level: t.experience.intermediate },
-    { name: 'SQL Server', level: t.experience.intermediate },
-    { name: 'Entity Framework', level: t.experience.intermediate },
-    { name: 'PostgreSQL', level: t.experience.learning }
+    { name: '.NET', level: t.experience.intermediate, levelKey: 'intermediate' },
+    { name: 'SQL Server', level: t.experience.intermediate, levelKey: 'intermediate' },
+    { name: 'Entity Framework', level: t.experience.intermediate, levelKey: 'intermediate' },
+    { name: 'PostgreSQL', level: t.experience.learning, levelKey: 'learning' }
   ]
 
   return (
-    <section id="experience">
+    <section id="experience" className="reveal">
       <h5>{t.experience.subtitle}</h5>
       <h2>{t.experience.title}</h2>
       <div className="container experience__container">
@@ -35,7 +35,7 @@ const Experiences = () => {
                 <BsFillPatchCheckFill className='experience__details-icon' />
                 <div>
                   <h4>{skill.name}</h4>
-                  <small className="text-light">{skill.level}</small>
+                  <small className="text-light" data-level={skill.levelKey}>{skill.level}</small>
                 </div>
               </article>
             ))}
@@ -50,7 +50,7 @@ const Experiences = () => {
                 <BsFillPatchCheckFill className='experience__details-icon' />
                 <div>
                   <h4>{skill.name}</h4>
-                  <small className="text-light">{skill.level}</small>
+                  <small className="text-light" data-level={skill.levelKey}>{skill.level}</small>
                 </div>
               </article>
             ))}

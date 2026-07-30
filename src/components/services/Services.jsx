@@ -8,12 +8,11 @@ const Services = () => {
   const { t } = useLang();
 
   return (
-    <section id="services">
+    <section id="services" className="reveal">
       <h5>{t.services.subtitle}</h5>
       <h2>{t.services.title}</h2>
 
       <div className="container services__container">
-        {/* Fiverr */}
         <article className="service__card">
           <SiFiverr className="service__icon" />
           <h3>{t.services.fiverr}</h3>
@@ -28,7 +27,6 @@ const Services = () => {
           </a>
         </article>
 
-        {/* Chrome Extensions */}
         <article className="service__card">
           <SiGooglechrome className="service__icon" />
           <h3>{t.services.chromeExt}</h3>

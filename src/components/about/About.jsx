@@ -9,7 +9,7 @@ export const About = () => {
   const { t } = useLang()
 
   return (
-    <section id="about">
+    <section id="about" className="reveal">
       <h5>{t.about.subtitle}</h5>
       <h2>{t.about.title}</h2>
 
