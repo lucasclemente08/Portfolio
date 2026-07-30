@@ -14,7 +14,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact">
+    <section id="contact" className="reveal">
       <motion.h5
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -33,8 +33,6 @@ const Contact = () => {
 
       <div className="container contact__container">
         <div className="contact__options">
-
-          {/* LinkedIn */}
           <motion.article
             className="contact__option"
             variants={cardVariants}
@@ -57,7 +55,6 @@ const Contact = () => {
             </div>
           </motion.article>
 
-          {/* GitHub */}
           <motion.article
             className="contact__option"
             variants={cardVariants}
@@ -79,7 +76,6 @@ const Contact = () => {
               </a>
             </div>
           </motion.article>
-
         </div>
       </div>
     </section>

@@ -7,17 +7,24 @@
 .about__me {
   width: 100%;
   aspect-ratio: 1/1;
-  border-radius: 2rem;
-  background: linear-gradient(45deg, var(--color-primary), transparent);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
   display: grid;
   place-items: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow-glow);
+}
+
+.about__me:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
 }
 
 .about__me-image {
-  border-radius: 2rem;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   transform: rotate(10deg);
-  transition: var(--transition);
+  transition: var(--transition-bounce);
 }
 
 .about__me-image:hover {
@@ -26,61 +33,82 @@
 
 .about__cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .about__card {
-  background: var(--color-bg-variant);
-  border: 1px solid transparent;
-  border-radius: 2rem;
-  padding: 2rem;
+  background: rgba(22, 22, 40, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.8rem;
   text-align: center;
   transition: var(--transition);
 }
 
 .about__card:hover {
-  background: transparent;
-  border-color: var(--color-primary-variant);
-  cursor: default;
+  background: var(--color-primary-variant);
+  border-color: var(--color-primary);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md), 0 0 20px var(--color-primary-glow);
 }
 
 .about__icon {
   color: var(--color-primary);
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
 }
 
 .about__card h5 {
   font-size: 0.95rem;
+  color: var(--color-white);
 }
 
 .about__card small {
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--color-light);
+}
+
+.about__content > small {
+  display: block;
+  color: var(--color-primary-light);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .about__content p {
-  margin: 2rem 0 2.6rem;
+  margin: 1.5rem 0 2rem;
   color: var(--color-light);
+  line-height: 1.9;
+  font-size: 0.95rem;
 }
 
-/* MEDIA QUERIES (medium devices) */
+.about__content .btn {
+  margin-top: 0.5rem;
+}
+
+/* ── MEDIA QUERIES (medium devices) ── */
 @media screen and (max-width: 1024px) {
   .about__container {
     grid-template-columns: 1fr;
     gap: 0;
   }
   .about__me {
-    width: 50%;
+    width: 45%;
     margin: 2rem auto 4rem;
   }
   .about__content {
     margin: 1rem 0 1.5rem;
+    text-align: center;
+  }
+  .about__cards {
+    justify-content: center;
   }
 }
 
-/* MEDIA QUERIES (small devices) */
+/* ── MEDIA QUERIES (small devices) ── */
 @media screen and (max-width: 600px) {
   .about__me {
     width: 65%;

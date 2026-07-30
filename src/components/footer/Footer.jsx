@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './footer.css'
 import { BsLinkedin } from 'react-icons/bs'
 import { BsGithub } from 'react-icons/bs'
 import { AiFillInstagram } from 'react-icons/ai'
+import { FiArrowUp } from 'react-icons/fi'
 import { useLang } from '../../i18n/LanguageContext'
 
 const Footer = () => {
   const { t } = useLang()
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 500)
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   return (
     <footer>
@@ -48,8 +62,18 @@ const Footer = () => {
       </div>
 
       <div className="footer__copyright">
-        <small>&copy; Lucas Clemente {new Date().getFullYear()}. {t.footer.copyright}</small>
+        <small>&copy; {new Date().getFullYear()} Lucas Clemente — {t.footer.copyright}</small>
       </div>
+
+      {/* Back to top */}
+      <button
+        className={`back-to-top ${showBackToTop ? 'visible' : ''}`}
+        onClick={scrollToTop}
+        aria-label="Back to top"
+        title="Back to top"
+      >
+        <FiArrowUp />
+      </button>
     </footer>
   )
 }

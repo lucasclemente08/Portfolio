@@ -1,26 +1,40 @@
 import React from 'react'
 import './nav.css'
-import {AiFillHome} from 'react-icons/ai'
-import {BiUserCircle} from 'react-icons/bi'
-import {BiBookAlt} from 'react-icons/bi'
-import {RiServiceLine} from 'react-icons/ri'
-import {BiMessageSquareDetail} from 'react-icons/bi'
+import { AiFillHome } from 'react-icons/ai'
+import { BiUserCircle } from 'react-icons/bi'
+import { BiBookAlt } from 'react-icons/bi'
+import { RiServiceLine } from 'react-icons/ri'
+import { BiMessageSquareDetail } from 'react-icons/bi'
 import { useState } from 'react'
-
+import { useLang } from '../../i18n/LanguageContext'
 
 const Nav = () => {
-  
-  const [activeNav,setActiveNav]=useState('#')
-  
-  return (
-   <nav>
-    <a href="#" onClick={()=>setActiveNav('#')} className={activeNav==='#' ? 'active' : ''}><AiFillHome/> </a>
-    <a href="#about" onClick={()=>setActiveNav('#about')}  className={activeNav==='#about' ? 'active' : ''} ><BiUserCircle/> </a>
-    <a href="#experience" onClick={()=>setActiveNav('#experience')}  className={activeNav==='#experience' ? 'active' : ''} ><BiBookAlt/> </a>
-    <a href="#services"  onClick={()=>setActiveNav('#services')}  className={activeNav==='#services' ? 'active' : ''}><RiServiceLine/> </a>
-    <a href="#contact"  onClick={()=>setActiveNav('#contact')}  className={activeNav==='#contact' ? 'active' : ''}><BiMessageSquareDetail/> </a>
+  const { t } = useLang()
+  const [activeNav, setActiveNav] = useState('#')
 
-   </nav>
+  const links = [
+    { href: '#', label: t.nav.home, icon: <AiFillHome /> },
+    { href: '#about', label: t.nav.about, icon: <BiUserCircle /> },
+    { href: '#experience', label: t.nav.experience, icon: <BiBookAlt /> },
+    { href: '#services', label: t.nav.services, icon: <RiServiceLine /> },
+    { href: '#contact', label: t.nav.contact, icon: <BiMessageSquareDetail /> }
+  ]
+
+  return (
+    <nav>
+      {links.map(({ href, label, icon }) => (
+        <a
+          key={href}
+          href={href}
+          data-label={label}
+          onClick={() => setActiveNav(href)}
+          className={activeNav === href ? 'active' : ''}
+          aria-label={label}
+        >
+          {icon}
+        </a>
+      ))}
+    </nav>
   )
 }
 

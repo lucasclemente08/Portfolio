@@ -7,14 +7,14 @@ const Portfolio = () => {
   const { t } = useLang();
 
   return (
-    <section id="portfolio">
+    <section id="portfolio" className="reveal">
       <h5>{t.portfolio.subtitle}</h5>
       <h2>{t.portfolio.title}</h2>
 
       <div className="container portfolio__container">
-        {data.map(({ id, image, title, github, demo }) => {
+        {data.map(({ id, image, title, github, demo }, index) => {
           return (
-            <article key={id} className="portfolio__item">
+            <article key={id} className="portfolio__item" style={{ transitionDelay: `${index * 80}ms` }}>
               <div className="portfolio__item-image">
                 <img src={image} alt={`Project ${title}`} />
               </div>
